@@ -8,7 +8,7 @@ public class Post {
 	
 	private String title, content,displayed;
 	private Date timecode;
-	private long id; // timecode ddmmyyyyhhmm
+	private long id;
 	private User author;
 
 	public Post(String title, String content, Date timecode, User author){
@@ -18,12 +18,8 @@ public class Post {
 		this.author = author;
 
 		this.content = content;
-		displayed = title + ""
-				+ "\n" + author.getUsername() + ""
-				+ "\n" + Ref.dateFormat.format(timecode)
-				+ "\n\n" +  content;
-				;
-		this.id = (title + timecode + author + content).hashCode();
+		displayed = title + "" + "\n" + author.getUsername() + "" + "\n" + Ref.dateFormat.format(timecode) + "\n\n" +  content;
+		this.id = displayed.hashCode();
 	}
 
 	public String getTitle() {
