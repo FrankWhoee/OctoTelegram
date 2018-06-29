@@ -1,16 +1,22 @@
 package blockchain.socialmedia.octotelegram;
 
+import java.util.Date;
+
 public class Post {
 	
 	private String title, content;
-	private int id, timecode; // timecode ddmmyyyyhhmm
+	private Date timecode;
+	private long id; // timecode ddmmyyyyhhmm
 	private User author;
 
-	public Post(String title, String content, int timecode, User author){
+	public Post(String title, String content, Date timecode, User author){
 		this.title = title;
 		this.content = content;
 		this.timecode = timecode;
 		this.author = author;
+
+		String contents = title + content + timecode + author.getUsername();
+		this.id = contents.hashCode();
 	}
 
 	public String getTitle() {
@@ -21,11 +27,11 @@ public class Post {
 		return content;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public int getTimecode() {
+	public Date getTimecode() {
 		return timecode;
 	}
 
