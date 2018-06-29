@@ -23,7 +23,7 @@ public class Post {
 				+ "\n" + Ref.dateFormat.format(timecode)
 				+ "\n\n" +  content;
 				;
-		this.id = content.hashCode();
+		this.id = (title + timecode + author + content).hashCode();
 	}
 
 	public String getTitle() {
