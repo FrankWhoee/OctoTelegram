@@ -1,5 +1,7 @@
 package blockchain.socialmedia.octotelegram;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import java.util.Date;
 public class User {
 	
 	private Long id;
+	private static final DateFormat dateFormat = new SimpleDateFormat("yyy/MM/dd HH:mm:ss");
 	private String username;
 	private ArrayList<User> friends;
 	private Date dateJoined;
@@ -17,6 +20,14 @@ public class User {
 		this.username = username;
 		this.friends = friends;
 		this.dateJoined = dateJoined;
+	}
+	
+	public Date getDateJoined() {
+		return dateJoined;
+	}
+	
+	public String getStringDateJoined(){
+		return dateFormat.format(dateJoined);
 	}
 	
 	public Long getIdLong() {
