@@ -5,6 +5,6 @@ import java.text.SimpleDateFormat;
 
 public class Ref {
 	
-	public static final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	public static final DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 	
 }
