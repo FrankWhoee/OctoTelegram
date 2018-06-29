@@ -9,7 +9,6 @@ import java.util.Date;
 public class User {
 	
 	private Long id;
-	private static final DateFormat dateFormat = new SimpleDateFormat("yyy/MM/dd HH:mm:ss");
 	private String username;
 	private ArrayList<User> friends;
 	private Date dateJoined;
@@ -27,7 +26,7 @@ public class User {
 	}
 	
 	public String getStringDateJoined(){
-		return dateFormat.format(dateJoined);
+		return Ref.dateFormat.format(dateJoined);
 	}
 	
 	public Long getIdLong() {

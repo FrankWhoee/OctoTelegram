@@ -1,10 +1,12 @@
 package blockchain.socialmedia.octotelegram;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Post {
 	
-	private String title, content;
+	private String title, content,displayed;
 	private Date timecode;
 	private long id; // timecode ddmmyyyyhhmm
 	private User author;
@@ -15,8 +17,13 @@ public class Post {
 		this.timecode = timecode;
 		this.author = author;
 
-		String contents = title + content + timecode + author.getUsername();
-		this.id = contents.hashCode();
+		this.content = content;
+		displayed = title + ""
+				+ "\n" + author.getUsername() + ""
+				+ "\n" + Ref.dateFormat.format(timecode)
+				+ "\n\n" +  content;
+				;
+		this.id = content.hashCode();
 	}
 
 	public String getTitle() {
