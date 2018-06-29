@@ -8,6 +8,12 @@ public class User {
 	private String username;
 	private ArrayList<User> friends;
 	
+	public User(Long id, String username, ArrayList<User> friends) {
+		this.id = id;
+		this.username = username;
+		this.friends = friends;
+	}
+	
 	public Long getIdLong() {
 		return id;
 	}
@@ -20,11 +26,8 @@ public class User {
 		return username;
 	}
 	
-	
 	public ArrayList<User> getFriends() {
 		return friends;
 	}
-	
-	
 	
 }
